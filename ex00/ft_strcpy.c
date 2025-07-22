@@ -12,13 +12,29 @@
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src);
+char	*ft_strcpy(char *dest, char *src)
 {
-	while ()
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 int	main(void)
 {
-	ft_strcpy("10", "13")
+	char	des;
+	char	src;
+
+	des = 'A';
+	src = 'B';
+	ft_strcpy(&des, &src);
+	printf("Source: %c", src);
+	printf("Distination: %c", des);
 	return (0);
 }
