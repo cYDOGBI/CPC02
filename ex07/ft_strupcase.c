@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 16:09:32 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/07/22 16:09:35 by tlaranje         ###   ########.fr       */
+/*   Created: 2025/07/23 09:52:23 by tlaranje          #+#    #+#             */
+/*   Updated: 2025/07/23 09:52:27 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
+	int	ascii;
 	int	i;
 
-	i = 0;
-	while (src[i] != '\0')
+	i = -1;
+	while (str[++i])
 	{
-		dest[i] = src[i];
-		i++;
+		ascii = str[i];
+		if (ascii >= 33 && ascii <= 126)
+		{
+			str[i] = str[i] - 32;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }
 
 // int	main(void)
 // {
-// 	char	des[10];
-// 	char	src[10];
+// 	char	string1[10];
 
-// 	strcpy(des, "ABCD");
-// 	strcpy(src, "DCBA");
-// 	printf("Source: %s\n", src);
-// 	ft_strcpy(des, src);
-// 	printf("Distination: %s\n", des);
+// 	strcpy(string1, "str");
+// 	printf("Antes: %s\n", string1);
+// 	printf("Depois: %s\n", ft_strupcase(string1));
 // 	return (0);
 // }
