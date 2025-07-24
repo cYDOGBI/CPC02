@@ -6,7 +6,7 @@
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:52:23 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/07/24 09:48:50 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:47:45 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ int	is_low(char l)
 
 	ascii = l;
 	return (ascii >= 97 && ascii <= 122);
+}
+
+int	is_up(char l)
+{
+	int	ascii;
+
+	ascii = l;
+	return (ascii >= 65 && ascii <= 90);
 }
 
 int	is_sign(char l)
@@ -44,6 +52,10 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i])
 	{
+		if (is_up(str[i]))
+		{
+			str[i] = str[i] + 32;
+		}
 		if (i == 0 && is_low(str[i]))
 		{
 			str[i] = str[i] - 32;
@@ -57,7 +69,7 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char	string1[100];
 
@@ -68,4 +80,4 @@ char	*ft_strcapitalize(char *str)
 	printf("Depois: %s\n", ft_strcapitalize(string1));
 	return (0);
 }
- */
+
