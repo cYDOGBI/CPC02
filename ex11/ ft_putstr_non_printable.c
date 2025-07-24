@@ -1,41 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*    ft_putstr_non_printable.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:52:23 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/07/23 09:52:27 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:52:36 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
-char	*ft_strlowcase(char *str)
+void	ft_write(char str)
 {
-	int	ascii;
-	int	i;
-
-	i = -1;
-	while (str[++i])
-	{
-		ascii = str[i];
-		if (ascii >= 65 && ascii <= 90)
-		{
-			str[i] = str[i] + 32;
-		}
-	}
-	return (str);
+	write(1, &str, 1);
 }
 
-/* int	main(void)
+void	ft_hex(unsigned char str)
 {
-	char	string1[10];
+	char	*hex;
 
-	strcpy(string1, "STR");
-	printf("Antes: %s\n", string1);
-	printf("Depois: %s\n", ft_strlowcase(string1));
+	hex = "0123456789abcdef";
+	ft_write(hex[str / 16]);
+	ft_write(hex[str % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int		ascii;
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		ascii = str[i];
+		if ((ascii >= 32 && ascii <= 126))
+		{
+			ft_write(str[i]);
+		}
+		else
+		{
+			ft_write('\\');
+			ft_hex(str[i]);
+		}
+		i++;
+	}
+}
+/*
+int	main(void)
+{
+	char	string[5];
+
+	strcpy(string, "Ola\nesta bem?");
+	ft_putstr_non_printable(string);
 	return (0);
-} */
+}
+*/

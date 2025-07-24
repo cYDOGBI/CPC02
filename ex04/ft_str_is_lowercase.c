@@ -32,23 +32,23 @@ int	ft_str_is_lowercase(char *str)
 	return (1);
 }
 
-// int	main(void)
-// {
-// 	char	string1[5];
-// 	char	string2[5];
-// 	char	string3[5];
-// 	char	string4[5];
-// 	char	string5[5];
+/* int	main(void)
+{
+	char	string1[5];
+	char	string2[5];
+	char	string3[5];
+	char	string4[5];
+	char	string5[5];
 
-// 	strcpy(string1, "ABCD");
-// 	strcpy(string2, "abcd");
-// 	strcpy(string3, "AbCd");
-// 	strcpy(string4, "1234");
-// 	strcpy(string5, "A1C2");
-// 	printf("String1: %d\n", ft_str_is_lowercase(string1));
-// 	printf("String2: %d\n", ft_str_is_lowercase(string2));
-// 	printf("String3: %d\n", ft_str_is_lowercase(string3));
-// 	printf("String4: %d\n", ft_str_is_lowercase(string4));
-// 	printf("String5: %d\n", ft_str_is_lowercase(string5));
-// 	return (0);
-// }
+	strcpy(string1, "ABCD");
+	strcpy(string2, "abcd");
+	strcpy(string3, "AbCd");
+	strcpy(string4, "1234");
+	strcpy(string5, "A1C2");
+	printf("String1: %d\n", ft_str_is_lowercase(string1));
+	printf("String2: %d\n", ft_str_is_lowercase(string2));
+	printf("String3: %d\n", ft_str_is_lowercase(string3));
+	printf("String4: %d\n", ft_str_is_lowercase(string4));
+	printf("String5: %d\n", ft_str_is_lowercase(string5));
+	return (0);
+} */

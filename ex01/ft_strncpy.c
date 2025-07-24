@@ -27,15 +27,15 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-// int	main(void)
-// {
-// 	char	des[10];
-// 	char	src[10];
+/* int	main(void)
+{
+	char	des[10];
+	char	src[10];
 
-// 	strcpy(des, "ABCD");
-// 	strcpy(src, "DCBA");
-// 	printf("Source: %s\n", src);
-// 	ft_strncpy(des, src, 3);
-// 	printf("Distination: %s\n", des);
-// 	return (0);
-// }
+	strcpy(des, "ABCD");
+	strcpy(src, "DCBA");
+	printf("Source: %s\n", src);
+	ft_strncpy(des, src, 3);
+	printf("Distination: %s\n", des);
+	return (0);
+} */
