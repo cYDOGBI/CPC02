@@ -10,37 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+/* #include <stdio.h>
+#include <string.h> */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	unsigned int	x;
+	unsigned int	src_size;
 
+	src_size = 0;
+	while (src[src_size])
+		src_size++;
+	if (size == 0)
+		return (src_size);
 	i = 0;
-	while (src[i])
+	while (src[i] && i < size - 1)
 	{
+		dest[i] = src[i];
 		i++;
 	}
-	x = 0;
-	while (src[x] && x < size - 1)
-	{
-		dest[x] = src[x];
-		x++;
-	}
-	dest[x] = '\0';
-	return (i);
+	dest[i] = '\0';
+	return (src_size);
 }
 
-// int	main(void)
-// {
-// 	char			src[6];
-// 	char			dest[6];
-// 	unsigned int	size;
+/* int	main(void)
+{
+	char			src[6];
+	char			dest[6];
+	unsigned int	size;
 
-// 	strcpy(src, "Hello, world!");
-// 	size = ft_strlcpy(dest, src, sizeof(dest));
-// 	printf("Dest: \"%s\", Size: %u\n", dest, size);
-// 	return (0);
-// }
+	strcpy(src, "Hello, world!");
+	size = ft_strlcpy(dest, src, sizeof(dest));
+	printf("Dest: \"%s\", Size: %u\n", dest, size);
+	return (0);
+} */
