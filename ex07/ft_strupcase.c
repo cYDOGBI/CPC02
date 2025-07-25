@@ -18,14 +18,15 @@ char	*ft_strupcase(char *str)
 	int	ascii;
 	int	i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		ascii = str[i];
 		if (ascii >= 97 && ascii <= 122)
 		{
 			str[i] = str[i] - 32;
 		}
+		i++;
 	}
 	return (str);
 }
@@ -38,5 +39,4 @@ char	*ft_strupcase(char *str)
 	printf("Antes: %s\n", string1);
 	printf("Depois: %s\n", ft_strupcase(string1));
 	return (0);
-}
- */
+} */

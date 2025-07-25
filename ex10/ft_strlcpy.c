@@ -33,14 +33,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	return (i);
 }
 
-/* int	main(void)
-{
-	char			src[6];
-	char			dest[6];
-	unsigned int	size;
+// int	main(void)
+// {
+// 	char			src[6];
+// 	char			dest[6];
+// 	unsigned int	size;
 
-	strcpy(src, "Hello, world!");
-	size = ft_strlcpy(dest, src, sizeof(dest));
-	printf("Dest: \"%s\", Size: %u\n", dest, size);
-	return (0);
-} */
+// 	strcpy(src, "Hello, world!");
+// 	size = ft_strlcpy(dest, src, sizeof(dest));
+// 	printf("Dest: \"%s\", Size: %u\n", dest, size);
+// 	return (0);
+// }

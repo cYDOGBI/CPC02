@@ -69,15 +69,14 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	string1[100];
 
 	strcpy(string1,
-		"ola, tudo bem? 42palavras "
+		"oLa, tudo bem? 42palavras "
 		"quarenta-e-duas; cinquenta+e+um");
 	printf("Antes: %s\n", string1);
 	printf("Depois: %s\n", ft_strcapitalize(string1));
 	return (0);
-}
-
+} */

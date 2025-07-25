@@ -1,45 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*    ft_putstr_non_printable.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaranje <tlaranje@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 09:52:23 by tlaranje          #+#    #+#             */
-/*   Updated: 2025/07/23 09:52:27 by tlaranje         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:52:36 by tlaranje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_write(char str)
 {
-	unsigned int	i;
+	write(1, &str, 1);
+}
+
+void	ft_hex(unsigned char str)
+{
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	ft_write(hex[str / 16]);
+	ft_write(hex[str % 16]);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int		ascii;
+	int		i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (str[i])
 	{
-		dest[i] = src[i];
+		ascii = str[i];
+		if ((ascii >= 32 && ascii <= 126))
+		{
+			ft_write(str[i]);
+		}
+		else
+		{
+			ft_write('\\');
+			ft_hex(str[i]);
+		}
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
 }
 
 /* int	main(void)
 {
-	char	dest[10];
-	char	src[10];
+	char	string[5];
 
-	strcpy(src, "ABCD");
-	strcpy(dest, "");
-	printf("Src: %s\n", src);
-	ft_strncpy(dest, src, 3);
-	printf("Dest: %s\n", dest);
+	strcpy(string, "Ola\nesta bem?");
+	ft_putstr_non_printable(string);
 	return (0);
 } */

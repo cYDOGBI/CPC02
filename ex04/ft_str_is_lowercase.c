@@ -18,16 +18,15 @@ int	ft_str_is_lowercase(char *str)
 	int	ascii;
 	int	i;
 
-	if (str[0] == '\0')
-		return (0);
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		ascii = str[i];
 		if (!(ascii >= 97 && ascii <= 122))
 		{
 			return (0);
 		}
+		i++;
 	}
 	return (1);
 }
@@ -44,7 +43,7 @@ int	ft_str_is_lowercase(char *str)
 	strcpy(string2, "abcd");
 	strcpy(string3, "AbCd");
 	strcpy(string4, "1234");
-	strcpy(string5, "A1C2");
+	strcpy(string5, "");
 	printf("String1: %d\n", ft_str_is_lowercase(string1));
 	printf("String2: %d\n", ft_str_is_lowercase(string2));
 	printf("String3: %d\n", ft_str_is_lowercase(string3));

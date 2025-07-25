@@ -18,14 +18,15 @@ char	*ft_strlowcase(char *str)
 	int	ascii;
 	int	i;
 
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		ascii = str[i];
 		if (ascii >= 65 && ascii <= 90)
 		{
 			str[i] = str[i] + 32;
 		}
+		i++;
 	}
 	return (str);
 }

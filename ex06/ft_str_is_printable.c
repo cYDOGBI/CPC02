@@ -18,16 +18,15 @@ int	ft_str_is_printable(char *str)
 	int	ascii;
 	int	i;
 
-	if (str[0] == '\0')
-		return (0);
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
 		ascii = str[i];
-		if (!(ascii >= 33 && ascii <= 126))
+		if (!(ascii >= 32 && ascii <= 126))
 		{
 			return (0);
 		}
+		i++;
 	}
 	return (1);
 }
@@ -44,7 +43,7 @@ int	ft_str_is_printable(char *str)
 	strcpy(string2, "1234");
 	strcpy(string3, "!@#$");
 	strcpy(string4, "¾");
-	strcpy(string5, "Å");
+	strcpy(string5, "");
 	printf("String1: %d\n", ft_str_is_printable(string1));
 	printf("String2: %d\n", ft_str_is_printable(string2));
 	printf("String3: %d\n", ft_str_is_printable(string3));
